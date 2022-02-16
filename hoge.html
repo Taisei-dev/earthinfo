@@ -3,10 +3,9 @@
 <head>
 </head>  
 <body>
-  <input id="input">
+  <input id="input"><span id="result">
   <script>
-    var input=getElementById("input");
-    input.addEventListener('change',()=>{});
+    input.oninput=()=>{result.innerHTML=input.value;};
   </script>
 </body>
 </html>
