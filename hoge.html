@@ -8,6 +8,10 @@
     input.oninput=()=>{
       if(input.value!=''){
         result.innerHTML='start';
+        setTimeout(()=>{
+          input.style.disabled=true;
+          result.innerHTML=input.value.length+'回';
+        },2000);
       }
     };
   </script>
