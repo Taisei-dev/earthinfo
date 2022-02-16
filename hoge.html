@@ -3,13 +3,13 @@
 <head>
 </head>  
 <body>
-  <input id="input"><span id="result">
+  <input id="input"/><span id="result">
   <script>
     input.oninput=()=>{
       if(input.value!=''){
         result.innerHTML='start';
         setTimeout(()=>{
-          input.style.disabled=true;
+          input.disabled=true;
           result.innerHTML=input.value.length+'回';
         },2000);
       }
