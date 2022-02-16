@@ -5,7 +5,11 @@
 <body>
   <input id="input"><span id="result">
   <script>
-    input.oninput=()=>{result.innerHTML=input.value;};
+    input.oninput=()=>{
+      if(input.value!=''){
+        result.innerHTML='start';
+      }
+    };
   </script>
 </body>
 </html>
