@@ -9,15 +9,15 @@
   <span id="speed">d</span>
   <script>
     const time=10;
-    var count=0;
+    var now=0;
     var prevlen=0;
     function info(){
-      count++;
+      now++;
       count.innerHTML='合計 '+input.value.length+' 文字';
-      average.innerHTML='平均 '+input.value.length/count+' key/s';
-      speed='現在 '+(input.value.length-prevlen)/count+' keys/s';
+      average.innerHTML='平均 '+input.value.length/now+' key/s';
+      speed='現在 '+(input.value.length-prevlen)/now+' keys/s';
       prevlen=input.value.length;
-      if(count>=time){
+      if(now>=time){
         input.disabled=true;
       }
       else{
