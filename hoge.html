@@ -15,13 +15,14 @@
     var prevlen=0;
     function info(){
       now++;
-      msg.innerText='あと '+time-now+' 秒';
+      msg.innerText='あと '+(time-now)+' 秒';
       count.innerText='合計 '+input.value.length+' 文字';
       average.innerText='平均 '+input.value.length/now+' 文字/s';
       speed.innerText='現在 '+(input.value.length-prevlen)+' 文字/s';
       prevlen=input.value.length;
       if(now>=time){
         input.disabled=true;
+        msg.innerText='終了';
         speed.innerText='';
       }
       else{
