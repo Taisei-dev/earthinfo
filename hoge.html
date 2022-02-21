@@ -3,35 +3,49 @@
 <head>
 </head>  
 <body>
-  <input id="input"/><span id="msg">a</span><br/>
+  <input id="input"/><br/>
+  <span id="msg">a</span><br/>
   <span id="count">b</span><br/>
   <span id="average">c</span><br/>
-  <span id="speed">d</span>
+  <span id="speed">d</span><br/>
+  <button id="reset">リセット</button>
   <script>
     const time=10;
     var now=0;
     var prevlen=0;
     function info(){
       now++;
-      msg.innerText=time-now;
+      msg.innerText='あと '+time-now+' 秒';
       count.innerText='合計 '+input.value.length+' 文字';
-      average.innerText='平均 '+input.value.length/now+' key/s';
-      speed.innerText='現在 '+(input.value.length-prevlen)/now+' keys/s';
+      average.innerText='平均 '+input.value.length/now+' 文字/s';
+      speed.innerText='現在 '+(input.value.length-prevlen)+' 文字/s';
       prevlen=input.value.length;
       if(now>=time){
         input.disabled=true;
+        speed.innerText='';
       }
       else{
         setTimeout(info,1000);
       }
     }
-    input.oninput=()=>{
+    function inputhandler(){
       if(input.value!=''){
         msg.innerText='start';
         input.oninput=()=>{};
         setTimeout(info,1000);
       }
     };
+    input.oninput=inputhandler;
+    reset.onclick=()=>{
+      input.value='';
+      input.disabled=false;
+      now=0;
+      msg.innerText='';
+      count.innerText='';
+      average.innerText='';
+      speed.innerText='';
+      input.oninput=inputhandler;
+    }
   </script>
 </body>
 </html>
