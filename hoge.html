@@ -17,7 +17,7 @@
       average.innerHTML='平均 '+input.value.length/count+' key/s';
       speed='現在 '+(input.value.length-prevlen)/count+' keys/s';
       prevlen=input.value.length;
-      if(count<=time){
+      if(count>=time){
         input.disabled=true;
       }
       else{
